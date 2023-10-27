@@ -1,47 +1,53 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+    <div id="app">
+        <h1>Calculadora Aritmética</h1>
+        <h3>Insira dois números e selecione a operação desejada para obter o resultado.</h3>
+        <ArithmeticCalculator />
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<script>
+import ArithmeticCalculator from './components/ArithmeticCalculator.vue';
+
+export default {
+    name: 'App',
+    components: {
+        ArithmeticCalculator
+    }
+};
+</script>
+
+<style>
+
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f7fa;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+h1 {
+  font-size: 2.5em;
+  color: #34495e;
+  margin-bottom: 0.5em;
+  letter-spacing: 1px;
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+h3 {
+  font-size: 1.2em;
+  color: #7f8c8d;
+  margin-bottom: 1.5em;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.4;
 }
+
 </style>
